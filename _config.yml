@@ -11,6 +11,11 @@ author: John Doe
 language: zh-CN
 timezone: ''
 
+menu:
+  home: 主页
+  archives: 归档
+
+  
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://www.297729.xyz
