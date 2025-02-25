@@ -12,8 +12,8 @@ language: zh-CN
 timezone: ''
 
 menu:
-  home: 主页
-  archives: 归档
+  主页: /
+  归档: /archives
 
   
 # URL
