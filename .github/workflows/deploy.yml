@@ -30,27 +30,10 @@ jobs:
       run: echo "www.297729.xyz" > source/CNAME  # 确保CNAME文件在正确的位置
 
     - name: Build Hexo
-      run: hexo generate
-
-    - name: Checkout gh-pages branch
-      uses: actions/checkout@v2
-      with:
-        ref: gh-pages  # Check out gh-pages branch
-
-    - name: Copy CNAME to gh-pages
-      run: |
-        cp source/CNAME ./  # Copy CNAME from source to root of gh-pages branch
-
-    - name: Commit and push changes to gh-pages
-      run: |
-        git config --global user.name 'GitHub Actions'
-        git config --global user.email 'actions@github.com'
-        git add CNAME
-        git commit -m "Update CNAME"
-        git push
+      run: hexo generate  # 生成站点
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         personal_token: ${{ secrets.PERSONAL_TOKEN }}
-        publish_dir: ./public
+        publish_dir: ./public  # 使用public目录进行部署，Hexo会自动将CNAME文件包含进去
