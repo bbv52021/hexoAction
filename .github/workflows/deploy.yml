@@ -32,6 +32,10 @@ jobs:
     - name: Build Hexo
       run: hexo generate  # 生成站点
 
+    - name: Copy images to public folder
+      run: |
+        cp -r images/ public/images/  # 将 images 目录从 master 分支复制到 public 目录
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
