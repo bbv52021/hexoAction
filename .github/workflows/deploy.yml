@@ -26,11 +26,11 @@ jobs:
         npm install
         npm install -g hexo-cli
 
+    - name: Create CNAME file
+      run: echo "www.297729.xyz" > source/CNAME  # 确保CNAME文件在正确的位置
+
     - name: Build Hexo
       run: hexo generate
-
-    - name: Add CNAME file
-      run: echo "www.297729.xyz" > source/CNAME
 
     - name: Checkout gh-pages branch
       uses: actions/checkout@v2
